@@ -13,7 +13,7 @@ embed_model = HuggingFaceEmbedding(model_name="sentence-transformers/all-MiniLM-
 Settings.embed_model = embed_model
 
 # Құжаттарды жүктеу
-reader = SimpleDirectoryReader("/app/data")
+reader = SimpleDirectoryReader("/data")
 documents = reader.load_data()
 index = VectorStoreIndex.from_documents(documents)
 chat_engine = index.as_chat_engine(chat_mode="context", verbose=True)
